@@ -38,6 +38,10 @@ ul li{
     margin: 1rem;
 }
 
+p{
+    white-space: normal;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -45,6 +49,12 @@ nav{
     margin: 4rem auto;
     width: 70vw;
     height: 50px;
+}
+
+main{
+    display: flex;
+    margin: 10rem auto;
+    width: 70vw;
 }
 
 .nav-logo{
@@ -63,13 +73,22 @@ nav{
     margin-left: 2rem;
 }
 
-.black-text{
-    color: var(--black);
+.left{
+    width: 45%;
 }
 
-.medium{
-    font-weight: 500;
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 55%;
 }
+
+.left img{
+    width: 100%;
+}
+
 
 .button{
     border: none;
@@ -88,4 +107,28 @@ nav{
 
 .button-secondary{
     background-color: var(--space-cadet);
+}
+
+.black-text{
+    color: var(--black);
+}
+
+.body-text{
+    font-size: 1.8rem;
+    white-space: pre-line;
+    text-align: center;
+}
+
+.medium{
+    font-weight: 500;
+}
+
+.large-title{
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.more-padding{
+    padding: 0 6rem;
 }
