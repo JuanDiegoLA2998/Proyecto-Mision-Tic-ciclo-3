@@ -34,6 +34,10 @@ ul a{
     text-decoration: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 ul li{
     margin: 1rem;
 }
@@ -53,6 +57,7 @@ nav{
 
 main{
     display: flex;
+    justify-content: center;
     margin: 10rem auto;
     width: 70vw;
 }
@@ -85,6 +90,44 @@ main{
     width: 55%;
 }
 
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top: 3rem;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+input[type="email"], input[type="password"]{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--input-grey);
+    margin: 1rem 0;
+    padding: 1.2rem;
+}
+
+
+.login-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+}
+.login-details a{
+    color: var(--tropical-rain-forest);
+}
+
 .left img{
     width: 100%;
 }
@@ -105,6 +148,10 @@ main{
     background-color: var(--mountain-meadow);
 }
 
+.button-primary:hover{
+    background-color: var(--tropical-rain-forest);
+}
+
 .button-secondary{
     background-color: var(--space-cadet);
 }
@@ -119,6 +166,7 @@ main{
     text-align: center;
 }
 
+
 .medium{
     font-weight: 500;
 }
@@ -127,6 +175,16 @@ main{
     font-size: 4rem;
     font-weight: 400;
     text-align: center;
+}
+
+.title{
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.subtitle{
+    font-size: 1.8rem;
+    margin-top: 1rem;
 }
 
 .more-padding{
