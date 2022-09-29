@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from citas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('agendarCita/<str:id_prof><str:name>', views.agendar_cita),
 ]
