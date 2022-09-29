@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from agendamiento import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.show_home),
+    path('agendar/', views.make_appointment),
+    path('ingresar/', views.signin)
 ]

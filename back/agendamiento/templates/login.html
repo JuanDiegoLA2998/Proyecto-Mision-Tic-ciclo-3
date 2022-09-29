@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'agendamiento/main.css' %}" />
+    <link rel="shortcut icon" href="{% static 'agendamiento/logo.svg' %}" type="image/x-icon" />
+    <title>Iniciar Sesión - Teayudamos</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-menu">
+            <a class="nav-logo black-text" href="/">
+                <img src="{% static 'agendamiento/logo.svg' %}" alt="" />
+                <li>Teayudamos</li>
+            </a>
+            <a class="medium" href="/">
+                <li>Inicio</li>
+            </a>
+            <a class="medium" href="#">
+                <li>Comunidad</li>
+            </a>
+            <a class="medium" href="#">
+                <li>Soporte</li>
+            </a>
+        </ul>
+        
+    </nav>
+    <main>
+        <section class="login">
+            <h2 class="title">Iniciar Sesión</h2>
+            <p class="subtitle">Inicia sesión para agendar tu cita</p>
+            <form action="/ingresar/" class="login-form" method="POST">
+                {% csrf_token %}
+                <input type="email" name="email" id="email" placeholder="johndoe@utp.edu.co">
+                <input type="password" name="password" id="password" placeholder="************">
+                <div class="login-details">
+                    <div>
+                        <input type="checkbox" name="remember-password" id="remember-password">
+                        <label for="remember-password">Recordarme</label>
+                    </div>
+                    <a href="#">Recuperar contraseña</a>
+
+                </div>
+                <input class="button button-primary more-padding" type="submit" value="Ingresar">
+            </form>
+        </section>
+    </main>
+</body>
+<script>
+</script>
+
+</html>
