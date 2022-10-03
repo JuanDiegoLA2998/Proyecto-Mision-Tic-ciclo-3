@@ -21,6 +21,6 @@ from agendamiento import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.show_home),
+    path('ingresar/', views.signin),
     path('agendar/', views.make_appointment),
-    path('ingresar/', views.signin)
 ]

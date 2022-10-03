@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" href="./icons/logo.svg" type="image/x-icon" />
+    <title>Agendamiento - Teayudamos</title>
+</head>
+
+<body>
+    <main>
+        <form action="" class="form-agendamiento" action="/agendamiento/" method="POST">
+            <div class="form-left">
+                <label class="form-label" for="profesional">1. Selecciona al profesional</label>
+                <select class="form-select-profesional" name="profesional" id="profesional">
+                    <option value="01">Psicologo Juan Diego</option>
+                </select>
+
+                <label for="calendario" class="form-label">2. Selecciona fecha</label>
+                <input type="date" name="fecha" id="fecha">
+
+                <label for="hora" class="form-label">3. Selecciona la hora</label>
+                <select name="hora" id="hora">
+                    <option value="01">01</option>
+                </select>
+            </div>
+            <div class="form-right">
+                <label for="comentario" class="form-label">4. Añade un comentario</label>
+                 <textarea name="" id="" cols="50" rows="5"></textarea>
+                <input class="button button-primary" type="submit" value="Previsualizar">
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
