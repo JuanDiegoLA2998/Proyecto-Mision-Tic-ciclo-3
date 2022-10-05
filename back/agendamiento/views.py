@@ -4,6 +4,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from agendamiento.models import Profesional, Cita
+from django.core.mail import EmailMessage 
+from django.conf import settings
 
 # Create your views here.
 
@@ -45,6 +47,17 @@ def make_appointment(request):
         fecha = request.POST["fecha"]
         hora = request.POST["appt-time"]
         comentario = request.POST["comentario"]
+
         new_appointment = Cita.objects.create(id_user=userid, fecha=fecha, hora=hora, comentario=comentario, email=email,id_profesional=profesional)
         new_appointment.save()
+
+        emailMess = EmailMessage(
+            subject = "Tu cita ha sido agendada",
+            body = f"Hemos agendado tu cita, Dr {profesional.nombre} te verá el día {fecha} a la siguiente hora: {hora}.",
+            from_email = settings.EMAIL_HOST_USER,
+            to  = [email],
+            reply_to = [email]
+        )
+        emailMess.send()
+
         return HttpResponse("<h1>se registro</h1>")
