@@ -23,5 +23,5 @@ urlpatterns = [
     path('', views.show_home),
     path('ingresar/', views.signin),
     path('agendar/', views.make_appointment),
-    path('miscitas/', views.next_appointment)
+    #path('miscitas/', views.next_appointment)
 ]
