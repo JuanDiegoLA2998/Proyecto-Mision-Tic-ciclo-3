@@ -59,5 +59,8 @@ def make_appointment(request):
             reply_to = [email]
         )
         emailMess.send()
+        return HttpResponse("<h2>Cita registrada</h2>")
+       # return redirect("/miscitas/")
 
-        return HttpResponse("<h1>se registro</h1>")
+# def next_appointment(request):
+#     next_appt=Cita.objects.alatest
