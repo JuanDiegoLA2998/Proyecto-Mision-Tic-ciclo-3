@@ -161,6 +161,11 @@ input[type="email"], input[type="password"]{
     color: var(--black);
 }
 
+.white-text{
+    color: var(--white);
+    text-decoration: none;
+}
+
 .body-text{
     font-size: 1.8rem;
     white-space: pre-line;
@@ -233,4 +238,27 @@ select{
     display: flex;
     flex-direction: column;
     
+}
+
+.green{
+    color: var(--tropical-rain-forest);
+}
+
+.miscitas_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.miscitas_container h2{ 
+    margin-bottom: 3rem;
+}
+
+.miscitas_container p{
+    margin-bottom: 1rem;
+}
+
+.citas_disclaimer{
+    margin-top: 3rem;
 }

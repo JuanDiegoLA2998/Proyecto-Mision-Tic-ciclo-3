@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'agendamiento/main.css' %}" />
+    <link rel="shortcut icon" href="{% static 'agendamiento/logo.svg' %}" type="image/x-icon" />
+    <title>Mis citas - Teayudamos</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-menu">
+            <a class="nav-logo black-text" href="#">
+                <img src="{% static 'agendamiento/logo.svg' %}" alt="" />
+                <li>Teayudamos</li>
+            </a>
+            <a class="medium" href="#">
+                <li>Inicio</li>
+            </a>
+            <a class="medium" href="#">
+                <li>Comunidad</li>
+            </a>
+            <a class="medium" href="#">
+                <li>Soporte</li>
+            </a>
+        </ul>
+        <button class="button button-secondary"><a class="white-text" href="/logout/">Cerrar sesión</a></button>
+    </nav>
+    <main class="miscitas_container">
+        <h2 class="title green">¡Detalles de tu próxima cita!</h2>
+        <p class="body-text"><strong>Profesional:</strong> {{cita.id_profesional}}</p>
+        <p class="body-text"><strong>Fecha de tu cita:</strong> {{cita.fecha}}</p>
+        <p class="body-text"><strong>Hora de tu cita:</strong> {{cita.hora}}</p>
+
+        <p class="citas_disclaimer"><strong> Recuerda que si deseas <a class="green" href="#">modificar</a> o <a class="green" href="#">cancelar</a> una cita, debes hacerlo con 24 horas de anticipación</strong></p>
+    </main>
+</body>
+
+</html>

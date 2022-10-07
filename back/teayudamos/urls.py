@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.show_home),
     path('ingresar/', views.signin),
+    path('logout/', views.signout),
     path('agendar/', views.make_appointment),
-    #path('miscitas/', views.next_appointment)
+    path('miscitas/', views.next_appointment)
 ]

@@ -16,29 +16,28 @@ def show_home(request):
 
 def signin(request):
     if request.method == "GET":
-        print("estoy pasando por aqui")
         return render(request, "login.html")
     else:
-        print("cargando...")
         username = request.POST["email"]
         password = request.POST["password"]
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("/agendar/")
+            return redirect("/miscitas/")
         else:
             return HttpResponse("<h2>mal</h2>")
 
-
+@login_required
 def signout(request):
-    return ""
+    logout(request)
+    return redirect("/")
+
 
 
 @login_required
 def make_appointment(request):
     if request.method == "GET":
         profesionales = Profesional.objects.all()
-        print(profesionales)
         return render(request, "agendamiento.html", {"profesionales": profesionales})
     else:
         email = request.user.email
@@ -59,8 +58,12 @@ def make_appointment(request):
             reply_to = [email]
         )
         emailMess.send()
-        return HttpResponse("<h2>Cita registrada</h2>")
-       # return redirect("/miscitas/")
+        return redirect("/miscitas/")
 
-# def next_appointment(request):
-#     next_appt=Cita.objects.alatest
+@login_required
+def next_appointment(request):
+    next_appt=Cita.objects.filter(id_user=request.user.id).order_by('fecha').first()
+    if next_appt is not None:
+        return render(request, "micita.html", {"cita": next_appt})
+    else:
+        return render(request, "nocita.html")
